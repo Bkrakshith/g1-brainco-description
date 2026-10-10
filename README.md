@@ -301,3 +301,12 @@ scene, because the parent's option wins.
   hands pass through the floor. Detect falls from the base height and orientation.
 - BrainCo does not specify the hand drive dynamics (finger armature 1e-3 kg m^2, damping 0.01 N m s/rad,
   kp = effort / 0.25 rad). The values here are assumptions; see `SOURCE.md` decision 10.
+
+## License
+
+The license of this repository is the Apache License, Version 2.0 (see `LICENSE`).
+You can use, change and share this work, also for commercial use.
+If you share this work or a work that you built on it, keep the `NOTICE` file.
+Give this credit in your documentation and product credits: "Based on hospital-sim by Bkrakshith (https://github.com/Bkrakshith/hospital-sim)".
+To cite this work in a publication, use `CITATION.cff`.
+Some third-party parts keep their own licences. The `NOTICE` file lists them.

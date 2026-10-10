@@ -1,0 +1,28 @@
+g1-brainco-description
+Copyright 2026 Bkrakshith (https://github.com/Bkrakshith)
+
+g1-brainco-description is part of hospital-sim (https://github.com/Bkrakshith/hospital-sim), created by Bkrakshith.
+
+This work is licensed under the Apache License, Version 2.0 (see LICENSE).
+
+Attribution. Section 4 of the licence requires that any redistribution or derivative work keeps this
+NOTICE file and shows its attribution. If you use this work or build on it, give this credit in your
+documentation, in the credits of your product, and in your source distribution:
+
+    Based on hospital-sim by Bkrakshith (https://github.com/Bkrakshith/hospital-sim)
+
+If you use this work in a publication, cite it with the details in CITATION.cff.
+
+Third-party components
+
+The parts below are not covered by the copyright above and keep their own licences.
+
+- The G1 body description and meshes come from unitreerobotics/unitree_ros, BSD-3-Clause, Copyright (c)
+  HangZhou YuShu TECHNOLOGY CO.,LTD. ("Unitree Robotics"). See sources/unitree_ros/LICENSE.
+
+- The Revo2 hand description and meshes come from BrainCoTech/revo2_description, Apache-2.0.
+  See sources/revo2_description/LICENSE.
+
+- Gains and the home pose are taken from Sirui-Xu/ULTRA, Apache-2.0. See sources/ultra/LICENSE.
+
+- SOURCE.md lists the exact upstream commits.
