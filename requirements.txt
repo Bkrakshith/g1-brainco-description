@@ -1,0 +1,10 @@
+# g1-brainco-description: direct Python dependencies of build_model.py and check_model.py.
+# Installed into the shared .venv of the master repo: .venv/bin/pip install -r g1-brainco-description/requirements.txt
+# Versions are the ones in the .venv freeze (venv_local.txt, 2026-10-10).
+mujoco==3.14.0
+numpy==1.26.4
+# pinocchio: optional, check_model.py only (its checks are skipped with an INFO line when not importable).
+# The .venv copy was installed from a local wheel of this same PyPI release.
+pin==3.9.0
+# Not listed: git (apt) for `build_model.py --fetch`; ROS 2 Humble robot_state_publisher / joint_state_publisher_gui /
+# rviz2 (apt) for the g1_description launch files in hospital-sim-ros2. Everything else imported is standard library.
