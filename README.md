@@ -3,9 +3,9 @@
 Part of [WardZero](https://bkrakshith.github.io/wardzero/), a simulated hospital for testing robots before they meet patients. Start from the main repository, [hospital-sim](https://github.com/Bkrakshith/hospital-sim).
 
 The robot model every WardZero component uses: the Unitree G1 29-DoF rev 1.0 with BrainCo Revo2 hands, as a URDF
-and an MJCF with meshes and a machine-readable `robot_spec.json`. `g1-whole-body-rl`, `g1-mujoco-sim`,
+and an MJCF with meshes and a machine-readable `robot_spec.json`. `g1-mujoco-sim`,
 `g1-isaac-sim`, `g1-webcam-teleop` and the `g1_description` package in `hospital-sim-ros2` read it. Building and
-checking it needs no other repository. With `g1-whole-body-rl` and its `third_party/ULTRA` submodule checked out
+checking it needs no other repository. With the archived `g1-whole-body-rl` and its `third_party/ULTRA` submodule checked out
 beside it, `check_model.py` also compares the model against ULTRA's MJCF.
 
 Paths are relative to this folder unless they name a sibling repository or a file in the `hospital-sim` root
@@ -68,7 +68,6 @@ flowchart LR
   B --> SPEC["robot_spec.json"]
   URDF & MJCF & SPEC --> C["check_model.py"]
   V["sources/unitree_ros/g1_29dof_rev_1_0.xml<br/>g1-whole-body-rl/third_party/ULTRA g1_29dof.xml"] -.compare.-> C
-  MJCF --> RL["g1-whole-body-rl"]
   MJCF --> MS["g1-mujoco-sim"]
   URDF --> IS["g1-isaac-sim"]
   URDF --> ROS["hospital-sim-ros2<br/>g1_description, g1_mission"]
@@ -113,7 +112,7 @@ The repository needs no data or assets outside git. The meshes are committed und
 and checked against `sources/mesh_manifest.json`. The option `--fetch` downloads from GitHub (unitree_ros,
 revo2_description). The optional ULTRA comparison reads
 `g1-whole-body-rl/third_party/ULTRA/ultra/data/assets/g1/g1_29dof.xml`. That file is in a git submodule of
-`g1-whole-body-rl` pinned at `ec972c7`.
+the archived `g1-whole-body-rl`, pinned at `ec972c7`.
 
 This table lists the pinned upstream sources and their licences; the full table is in `SOURCE.md`.
 
@@ -255,7 +254,6 @@ repository reads nothing from siblings at build time. This table lists what it p
 
 | Consumer | Reads |
 |---|---|
-| `g1-whole-body-rl` | `mjcf/g1_29dof_brainco_fixedhands.xml` (train, eval), `mjcf/g1_29dof_brainco.xml` (eval with hands), `robot_spec.json` (through `configs/robot.yaml`, `scripts/build_assets.py`) |
 | `g1-mujoco-sim` | `mjcf/g1_29dof_brainco.xml` (copied into `g1_robot.xml` by `build_world.py`); `g1_mujoco_sim` reads `robot_spec.json` `effort_limit_ultra` when `effort_limits:=ultra` |
 | `g1-isaac-sim` | `urdf/g1_29dof_brainco.urdf` (`import_g1.py` to USD), `robot_spec.json` (`g1_config.py`) |
 | `hospital-sim-ros2` `g1_description` | `urdf/g1_29dof_brainco_ros.urdf`, `_ik.urdf` and `meshes/` installed by its CMakeLists from `../../../../g1-brainco-description` |
