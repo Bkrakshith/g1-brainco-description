@@ -1,4 +1,6 @@
-# g1-brainco-description: G1 29-DoF plus BrainCo Revo2 robot model
+# WardZero Robot Model: Unitree G1 with BrainCo Revo2 Hands
+
+Part of [WardZero](https://bkrakshith.github.io/wardzero/), a simulated hospital for testing robots before they meet patients. Start from the main repository, [hospital-sim](https://github.com/Bkrakshith/hospital-sim).
 
 This repository holds the robot model that every other repository uses. The model is the Unitree G1 29-DoF
 rev 1.0 with BrainCo Revo2 hands. The repository provides it as a URDF and as an MJCF, with meshes and a
