@@ -2,21 +2,18 @@
 
 Part of [WardZero](https://bkrakshith.github.io/wardzero/), a simulated hospital for testing robots before they meet patients. Start from the main repository, [hospital-sim](https://github.com/Bkrakshith/hospital-sim).
 
-This repository holds the robot model that every other repository uses. The model is the Unitree G1 29-DoF
-rev 1.0 with BrainCo Revo2 hands. The repository provides it as a URDF and as an MJCF, with meshes and a
-machine-readable `robot_spec.json`. The consumers are `g1-whole-body-rl`, `g1-mujoco-sim`, `g1-isaac-sim`,
-`g1-webcam-teleop`, and the `g1_description` and `g1_mission` packages in `hospital-sim-ros2`. The build and
-the checks need no sibling repository. The script `check_model.py` also compares the model against ULTRA's MJCF
-when `g1-whole-body-rl` is checked out beside this repository with its `third_party/ULTRA` submodule.
+The robot model every WardZero component uses: the Unitree G1 29-DoF rev 1.0 with BrainCo Revo2 hands, as a URDF
+and an MJCF with meshes and a machine-readable `robot_spec.json`. `g1-whole-body-rl`, `g1-mujoco-sim`,
+`g1-isaac-sim`, `g1-webcam-teleop` and the `g1_description` package in `hospital-sim-ros2` read it. Building and
+checking it needs no other repository. With `g1-whole-body-rl` and its `third_party/ULTRA` submodule checked out
+beside it, `check_model.py` also compares the model against ULTRA's MJCF.
 
-The master repository `hospital-sim` clones all of these repositories side by side. It provides `env.sh`, which
-activates the shared `.venv` with mujoco. Paths in this README are relative to this repository unless they name
-a sibling repository or the master (`env.sh`, `docs/interfaces.md`). Run the commands from the root of the
-master checkout.
+Paths are relative to this folder unless they name a sibling repository or a file in the `hospital-sim` root
+(`env.sh`, `docs/interfaces.md`). Commands run from the root of the `hospital-sim` checkout, after `source env.sh`.
 
-The script `build_model.py` generates the files under `g1_29dof_brainco/{urdf,mjcf}` and `robot_spec.json`. Do
-not edit these files by hand. The file `SOURCE.md` lists the upstream commits, the licences and every modelling
-decision. This README summarises it.
+`build_model.py` generates `g1_29dof_brainco/{urdf,mjcf}` and `robot_spec.json`, so do not edit those files by
+hand. `SOURCE.md` records the upstream commits, the licences and every modelling decision. This README summarises
+it.
 
 ## How it works
 
